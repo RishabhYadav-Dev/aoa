@@ -10,17 +10,18 @@ if(arr[j] < arr[min]){
 min = j;
 }
 }
-int temp = arr[i]; arr[i] = arr[min]; 
+int temp = arr[i]; 
+arr[i] = arr[min]; 
 arr[min] = temp;
 }
 }
-
 int main() { 
 int n;
 printf("Enter the number of Elements: "); 
 scanf("%d", &n);
 int arr[n];
-printf("Array input: "); for(int i = 0; i < n; i++)
+printf("Array input: "); 
+for(int i = 0; i < n; i++)
 { 
 scanf("%d", &arr[i]);
 }

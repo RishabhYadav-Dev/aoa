@@ -1,36 +1,27 @@
 #include <stdio.h>
-void combine(int arr[], int low, int mid, int high) { int i = low, j = mid + 1, k = 0;
-int temp[high - low + 1];
-while (i <= mid && j <= high) { if (arr[i] <= arr[j]) {
-temp[k++] = arr[i++];
-} else {
-temp[k++] = arr[j++];
+
+void selectionSort(int arr[], int n){ int min, i , j;
+for(i = 0; i < n-1; i++){ min = i;
+for(j = i+1; j < n; j++){ if(arr[j] < arr[min]){
+min = j;
 }
 }
-while (i <= mid) {
-temp[k++] = arr[i++];
-}
-while (j <= high) {
-temp[k++] = arr[j++];
-}
-for (int i = 0; i < k; i++) { arr[low + i] = temp[i];
+int temp = arr[i]; arr[i] = arr[min]; arr[min] = temp;
 }
 }
-void mergeSort(int arr[], int low, int high) { if (low < high) {
-int mid = (low + high) / 2; mergeSort(arr, low, mid); mergeSort(arr, mid + 1, high); combine(arr, low, mid, high);
-}
-}
+
 int main() { int n;
 printf("Enter the number of Elements: "); scanf("%d", &n);
 int arr[n];
 printf("Array input: "); for(int i = 0; i < n; i++){ scanf("%d", &arr[i]);
 }
-mergeSort(arr, 0, n-1);
-printf("Resulted Sorted array using Merge Sort Approach: "); for(int i = 0; i < n; i++){
+selectionSort(arr , n);
+printf("Resulted Sorted array using Selection Sort Approach: "); for(int i = 0; i < n; i++){
 printf("%d ", arr[i]);
 }
 return 0;
-} 
+}
+
 
 
 // Algo

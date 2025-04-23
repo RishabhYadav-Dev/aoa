@@ -1,22 +1,34 @@
 #include <stdio.h>
-void insertion_sort(int arr[], int n) { for (int i = 0; i < n; i++) {
+void insertion_sort(int arr[], int n) 
+{ 
+for (int i = 0; i < n; i++) 
+{
 int j = i;
-while (j > 0 && arr[j - 1] > arr[j]) { int temp = arr[j - 1];
-arr[j - 1] = arr[j]; arr[j] = temp;
+while (j > 0 && arr[j - 1] > arr[j]) 
+{ 
+int temp = arr[j - 1];
+arr[j - 1] = arr[j]; 
+arr[j] = temp;
 j--;
 }
 }
-printf("After Using insertion sort: "); for (int i = 0; i < n; i++) {
+printf("After Using insertion sort: "); 
+for (int i = 0; i < n; i++) {
 printf("%d ", arr[i]);
 }
 printf("\n");
 }
-int main() { int n;
-printf("Enter the number of Elements: "); scanf("%d", &n);
+int main() { 
+int n;
+printf("Enter the number of Elements: "); 
+scanf("%d", &n);
 int arr[n];
-printf("Array input: "); for(int i = 0; i < n; i++){ scanf("%d", &arr[i]);
+printf("Array input: "); 
+for(int i = 0; i < n; i++){ 
+scanf("%d", &arr[i]);
 }
-insertion_sort(arr , n); return 0;
+insertion_sort(arr , n); 
+return 0;
 }
 
 

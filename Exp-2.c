@@ -15,7 +15,8 @@ arr[min] = temp;
 }
 }
 
-int main() { int n;
+int main() { 
+int n;
 printf("Enter the number of Elements: "); 
 scanf("%d", &n);
 int arr[n];
